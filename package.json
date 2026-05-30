@@ -4,10 +4,11 @@
     "mocha": "^11.7.5",
     "node-fetch": "^2.7.0",
     "supertest": "^7.2.2",
-    "scripts": {
-    "test": "mocha parcial_1/*.test.js"
+    "selenium-webdriver": "^4.43.0",
+    "chromedriver": "^148.0.2"
+  },
+  "scripts": {
+    "test": "mocha parcial_1/*.test.js",
+    "selenium": "mocha Pracial1_1/backend/selenium-automation.js --timeout 30000"
   }
-    
-  }
-  
 }

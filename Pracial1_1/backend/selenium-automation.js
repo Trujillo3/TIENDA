@@ -1,6 +1,7 @@
-import { Builder, By, until } from "selenium-webdriver";
-import chrome from "selenium-webdriver/chrome.js";
-import { expect } from "chai";
+require("chromedriver");
+const { Builder, By, until } = require("selenium-webdriver");
+const chrome = require("selenium-webdriver/chrome");
+const { expect } = require("chai");
 
 describe("Automatización de Login y Compras - E2E", function () {
 
@@ -10,7 +11,9 @@ describe("Automatización de Login y Compras - E2E", function () {
 
   before(async () => {
     const options = new chrome.Options();
-    // options.addArguments('--headless'); // Opcional: ejecutar en modo headless
+    if (process.env.CI) {
+      options.addArguments("--headless", "--no-sandbox", "--disable-dev-shm-usage", "--disable-gpu");
+    }
 
     driver = await new Builder()
       .forBrowser("chrome")
