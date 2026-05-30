@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "chai": "^6.2.2",
+    "mocha": "^11.7.5",
+    "node-fetch": "^2.7.0",
+    "supertest": "^7.2.2",
+    "scripts": {
+    "test": "mocha parcial_1/*.test.js"
+  }
+    
+  }
+  
+}
